@@ -25,6 +25,8 @@
     <modules>
         <module>jarvis-magic-api</module>
         <module>jarvis-magic-application</module>
+        <module>jarvis-magic-repository</module>
+        <module>jarvis-magic-domain</module>
     </modules>
 
     <dependencies>
@@ -108,6 +110,17 @@
             <version>${apache.commons.version}</version>
         </dependency>
 
+        <!--   Swagger    -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -132,6 +145,16 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>jarvis-magic-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jarvis-magic-repository</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jarvis-magic-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

@@ -1,0 +1,1 @@
+CREATE SCHEMA IF NOT EXISTS "jarvis_magic" AUTHORIZATION "jarvis_db_manager";

@@ -16,6 +16,14 @@
             <groupId>br.com.jarvis</groupId>
             <artifactId>jarvis-magic-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>br.com.jarvis</groupId>
+            <artifactId>jarvis-magic-repository</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.jarvis</groupId>
+            <artifactId>jarvis-magic-domain</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
