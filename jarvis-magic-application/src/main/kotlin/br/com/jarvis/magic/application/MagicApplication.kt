@@ -1,29 +1,33 @@
 package br.com.jarvis.magic.application
 
+import br.com.jarvis.magic.application.config.MagicApplicationConfig
 import org.slf4j.LoggerFactory
 import org.springframework.boot.SpringApplication
 import java.net.InetAddress
 import java.time.LocalDateTime
 
-private val LOG = LoggerFactory.getLogger("br.com.jarvis.magic.application.MagicApplication.kt")
+object MagicApplication {
 
-fun main(args: Array<String>) {
-    val app = SpringApplication.run(MagicApplicationConfig::class.java, *args)
+    private val LOG = LoggerFactory.getLogger("br.com.jarvis.magic.application.MagicApplication.kt")
 
-    val applicationName = app.environment.getProperty("spring.application.name")
-    val contextPath = app.environment.getProperty("server.servlet.context-path")
-    val port = app.environment.getProperty("server.port")
-    val hostAddress = InetAddress.getLocalHost().hostAddress
-    val applicationVersion = app.environment.getProperty("server.version")
-    val currentTime = LocalDateTime.now().toString()
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val app = SpringApplication.run(MagicApplicationConfig::class.java, *args)
 
-    LOG.info(
-        """|
+        val applicationName = app.environment.getProperty("spring.application.name")
+        val contextPath = app.environment.getProperty("server.servlet.context-path")
+        val port = app.environment.getProperty("server.port")
+        val hostAddress = InetAddress.getLocalHost().hostAddress
+        val currentTime = LocalDateTime.now().toString()
+
+        LOG.info(
+            """|
                |------------------------------------------------------------
                |   Application '$applicationName' is running! Access URLs:
                |   Local:      http://127.0.0.1:$port$contextPath
                |   External:   http://$hostAddress:$port$contextPath
                |   Current:    $currentTime
                |------------------------------------------------------------""".trimMargin()
-    )
+        )
+    }
 }
