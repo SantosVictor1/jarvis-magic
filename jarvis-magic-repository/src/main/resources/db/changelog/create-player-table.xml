@@ -24,6 +24,10 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="sequence_player" author="Victor">
+        <createSequence sequenceName="player_sequence" schemaName="jarvis_magic"/>
+    </changeSet>
+
     <changeSet author="Victor" id="3">
         <addPrimaryKey schemaName="jarvis_magic" columnNames="id" constraintName="player_pkey" tableName="player"/>
     </changeSet>

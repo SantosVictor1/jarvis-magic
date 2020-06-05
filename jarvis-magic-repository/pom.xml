@@ -11,5 +11,11 @@
 
     <artifactId>jarvis-magic-repository</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>br.com.jarvis</groupId>
+            <artifactId>jarvis-magic-domain</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

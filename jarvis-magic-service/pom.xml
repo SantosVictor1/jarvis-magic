@@ -9,13 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jarvis-magic-application</artifactId>
+    <artifactId>jarvis-magic-service</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>br.com.jarvis</groupId>
-            <artifactId>jarvis-magic-api</artifactId>
-        </dependency>
         <dependency>
             <groupId>br.com.jarvis</groupId>
             <artifactId>jarvis-magic-repository</artifactId>
@@ -23,10 +19,6 @@
         <dependency>
             <groupId>br.com.jarvis</groupId>
             <artifactId>jarvis-magic-domain</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>br.com.jarvis</groupId>
-            <artifactId>jarvis-magic-service</artifactId>
         </dependency>
     </dependencies>
 

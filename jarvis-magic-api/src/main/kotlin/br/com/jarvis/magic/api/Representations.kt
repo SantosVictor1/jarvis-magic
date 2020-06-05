@@ -7,6 +7,12 @@ data class LoginRequest(
     val nickname: String
 )
 
+data class PlayerResponse(
+    val id: Int,
+    val nickname: String,
+    val life: Int,
+    val mana: Int
+)
 
 data class ResponseWrapper<T> (
     val content: T

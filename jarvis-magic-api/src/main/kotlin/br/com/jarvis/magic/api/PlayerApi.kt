@@ -18,5 +18,5 @@ interface PlayerApi {
     @ResponseStatus(OK)
     @ResponseBody
     @ApiOperation(value = "Login with nickname")
-    fun login(@RequestBody @Valid loginRequest: LoginRequest): ResponseWrapper<String>
+    fun login(@RequestBody @Valid loginRequest: LoginRequest): ResponseWrapper<PlayerResponse>
 }
