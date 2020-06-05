@@ -2,7 +2,7 @@ package br.com.jarvis.magic.api
 
 import javax.validation.constraints.NotEmpty
 
-data class PlayerRequest(
+data class LoginRequest(
     @field:[NotEmpty]
     val nickname: String
 )
