@@ -11,24 +11,16 @@
             </not>
         </preConditions>
         <createTable tableName="player" schemaName="jarvis_magic">
-            <column name="id" type="BIGINT">
+            <column name="id" type="varchar(36)">
                 <constraints nullable="false"/>
             </column>
             <column name="nickname" type="varchar(255)"/>
-            <column name="life" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="mana" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
+            <column name="life" type="BIGINT"/>
+            <column name="mana" type="BIGINT"/>
         </createTable>
     </changeSet>
 
-    <changeSet id="sequence_player" author="Victor">
-        <createSequence sequenceName="player_sequence" schemaName="jarvis_magic"/>
-    </changeSet>
-
-    <changeSet author="Victor" id="3">
+    <changeSet author="Victor" id="set_player_pk">
         <addPrimaryKey schemaName="jarvis_magic" columnNames="id" constraintName="player_pkey" tableName="player"/>
     </changeSet>
 

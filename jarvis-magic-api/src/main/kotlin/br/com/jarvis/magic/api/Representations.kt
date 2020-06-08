@@ -8,7 +8,7 @@ data class LoginRequest(
 )
 
 data class PlayerResponse(
-    val id: Int,
+    val id: String,
     val nickname: String,
     val life: Int,
     val mana: Int

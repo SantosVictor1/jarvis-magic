@@ -8,7 +8,7 @@ fun LoginRequest.toDomain() = PlayerTO(nickname = this.nickname)
 
 fun PlayerTO.toResponse() =
     PlayerResponse(
-        id = this.id!!,
+        id = this.id,
         nickname = this.nickname,
         life = this.life,
         mana = this.mana
