@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator
 import java.util.UUID
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -36,9 +37,8 @@ data class MachineEntity(
 @Table(name = "player_card")
 data class PlayerCardEntity(
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    val id: String = UUID.randomUUID().toString(),
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Int? = null,
     val title: String = "",
     val description: String = "",
     val cost: Int = 0,
@@ -53,9 +53,8 @@ data class PlayerCardEntity(
 @Table(name = "machine_card")
 data class MachineCardEntity(
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    val id: String = UUID.randomUUID().toString(),
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Int? = null,
     val title: String = "",
     val description: String = "",
     val cost: Int = 0,

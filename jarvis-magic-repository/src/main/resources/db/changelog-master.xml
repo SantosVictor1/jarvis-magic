@@ -6,4 +6,5 @@
     <include file="db/changelog/create-player-card-table.xml"/>
     <include file="db/changelog/create-machine-table.xml"/>
     <include file="db/changelog/create-machine-card-table.xml"/>
+    <include file="db/changelog/insert-player-card.xml"/>
 </databaseChangeLog>

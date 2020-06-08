@@ -11,7 +11,7 @@
             </not>
         </preConditions>
         <createTable tableName="player_card" schemaName="jarvis_magic">
-            <column name="id" type="varchar(36)">
+            <column name="id" type="int">
                 <constraints nullable="false"/>
             </column>
             <column name="title" type="varchar(100)"/>
