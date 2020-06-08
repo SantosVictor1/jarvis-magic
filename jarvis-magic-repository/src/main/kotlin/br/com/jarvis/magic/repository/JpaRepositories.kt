@@ -5,6 +5,6 @@ import br.com.jarvis.magic.domain.model.PlayerEntity
 import org.springframework.stereotype.Repository
 
 @Repository
-interface PlayerRepository : JpaRepository<PlayerEntity, Int> {
+interface PlayerRepository : JpaRepository<PlayerEntity, String> {
 
 }

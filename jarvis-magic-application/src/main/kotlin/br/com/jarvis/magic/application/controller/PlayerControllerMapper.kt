@@ -1,10 +1,10 @@
 package br.com.jarvis.magic.application.controller
 
-import br.com.jarvis.magic.api.LoginRequest
+import br.com.jarvis.magic.api.NicknameRequest
 import br.com.jarvis.magic.api.PlayerResponse
 import br.com.jarvis.magic.domain.to.PlayerTO
 
-fun LoginRequest.toDomain() = PlayerTO(nickname = this.nickname)
+fun NicknameRequest.toDomain() = PlayerTO(nickname = this.nickname)
 
 fun PlayerTO.toResponse() =
     PlayerResponse(
