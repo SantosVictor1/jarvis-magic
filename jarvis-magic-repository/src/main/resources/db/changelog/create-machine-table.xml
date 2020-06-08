@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Victor" id="create_machine">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="machine"/>
+            </not>
+        </preConditions>
+        <createTable tableName="machine" schemaName="jarvis_magic">
+            <column name="id" type="varchar(36)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="life" type="BIGINT"/>
+            <column name="mana" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Victor" id="set_machine_pk">
+        <addPrimaryKey schemaName="jarvis_magic" columnNames="id" constraintName="machine_pkey" tableName="machine"/>
+    </changeSet>
+
+</databaseChangeLog>

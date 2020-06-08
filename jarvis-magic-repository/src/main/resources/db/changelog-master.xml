@@ -4,4 +4,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <include file="db/changelog/create-player-table.xml"/>
     <include file="db/changelog/create-player-card-table.xml"/>
+    <include file="db/changelog/create-machine-table.xml"/>
+    <include file="db/changelog/create-machine-card-table.xml"/>
 </databaseChangeLog>

@@ -1,0 +1,43 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Victor" id="create_machine_card">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="machine_card"/>
+            </not>
+        </preConditions>
+        <createTable tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" type="varchar(36)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="varchar(100)"/>
+            <column name="description" type="varchar(255)"/>
+            <column name="cost" type="int"/>
+            <column name="life_damage" type="int"/>
+            <column name="mana_damage" type="int"/>
+            <column name="machine_id" type="varchar(36)">
+                <constraints foreignKeyName="machine_id" nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Victor" id="set_machine_card_pk">
+        <addPrimaryKey schemaName="jarvis_magic" columnNames="id" constraintName="machine_card_pkey" tableName="machine_card"/>
+    </changeSet>
+
+    <changeSet author="Victor" id="set_machine_fk">
+        <addForeignKeyConstraint baseTableName="machine_card"
+                                 baseColumnNames="machine_id"
+                                 constraintName="fk_machine_id"
+                                 referencedTableName="machine"
+                                 referencedColumnNames="id"
+                                 baseTableSchemaName="jarvis_magic"
+                                 referencedTableSchemaName="jarvis_magic"
+        />
+    </changeSet>
+
+</databaseChangeLog>
