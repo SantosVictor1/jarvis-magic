@@ -19,25 +19,11 @@
             <column name="cost" type="int"/>
             <column name="life_damage" type="int"/>
             <column name="passive" type="int"/>
-            <column name="player_id" type="varchar(36)">
-                <constraints foreignKeyName="player_id" nullable="true"/>
-            </column>
         </createTable>
     </changeSet>
 
     <changeSet author="Victor" id="set_player_card_pk">
         <addPrimaryKey schemaName="jarvis_magic" columnNames="id" constraintName="player_card_pkey" tableName="player_card"/>
-    </changeSet>
-
-    <changeSet author="Victor" id="set_player_fk">
-        <addForeignKeyConstraint baseTableName="player_card"
-                                 baseColumnNames="player_id"
-                                 constraintName="fk_player_id"
-                                 referencedTableName="player"
-                                 referencedColumnNames="id"
-                                 baseTableSchemaName="jarvis_magic"
-                                 referencedTableSchemaName="jarvis_magic"
-        />
     </changeSet>
 
 </databaseChangeLog>

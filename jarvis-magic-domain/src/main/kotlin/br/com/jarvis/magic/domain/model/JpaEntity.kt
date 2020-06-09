@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
+import javax.persistence.JoinTable
+import javax.persistence.ManyToMany
 import javax.persistence.ManyToOne
 import javax.persistence.Table
 
@@ -19,7 +21,14 @@ data class PlayerEntity (
     val id: String = UUID.randomUUID().toString(),
     val nickname: String = "",
     val life: Int = 20,
-    val mana: Int = 20
+    val mana: Int = 20,
+    @ManyToMany
+    @JoinTable(
+        name = "player_deck",
+        joinColumns = [JoinColumn(name = "player_id")],
+        inverseJoinColumns = [JoinColumn(name = "card_id")]
+    )
+    private val player: List<PlayerCardEntity> = listOf()
 )
 
 @Entity
@@ -43,10 +52,7 @@ data class PlayerCardEntity(
     val description: String = "",
     val cost: Int = 0,
     val lifeDamage: Int = 0,
-    val passive: Int? = null,
-    @ManyToOne(targetEntity = PlayerEntity::class)
-    @JoinColumn(name = "player_id", nullable = true)
-    private val player: PlayerEntity? = null
+    val passive: Int? = null
 )
 
 @Entity

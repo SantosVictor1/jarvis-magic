@@ -1,0 +1,41 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Victor" id="create_player_deck">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="player_deck"/>
+            </not>
+        </preConditions>
+        <createTable tableName="player_deck" schemaName="jarvis_magic">
+            <column name="player_id" type="varchar(36)"/>
+            <column name="card_id" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Victor" id="set_player_fk">
+        <addForeignKeyConstraint baseTableName="player_deck"
+                                 baseColumnNames="player_id"
+                                 constraintName="fk_player_id"
+                                 referencedTableName="player"
+                                 referencedColumnNames="id"
+                                 baseTableSchemaName="jarvis_magic"
+                                 referencedTableSchemaName="jarvis_magic"
+        />
+    </changeSet>
+
+    <changeSet author="Victor" id="set_player_card_fk">
+        <addForeignKeyConstraint baseTableName="player_deck"
+                                 baseColumnNames="card_id"
+                                 constraintName="fk_player_card_id"
+                                 referencedTableName="player_card"
+                                 referencedColumnNames="id"
+                                 baseTableSchemaName="jarvis_magic"
+                                 referencedTableSchemaName="jarvis_magic"
+        />
+    </changeSet>
+
+</databaseChangeLog>

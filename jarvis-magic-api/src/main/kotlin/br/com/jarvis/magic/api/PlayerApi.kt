@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.ResponseStatus
 import javax.validation.Valid
 
-@Api(value="Player Resource", tags=["Player Resource"], description="Player Command Resources")
+@Api(value = "Player Resource", tags = ["Player Resource"], description = "Player Command Resources")
 @RequestMapping("/player")
 interface PlayerApi {
 

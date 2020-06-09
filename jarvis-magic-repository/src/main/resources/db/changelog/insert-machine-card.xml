@@ -1,0 +1,92 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Victor" id="insert_cards_machine">
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="1"/>
+            <column name="title" value="Golpe do Não Consigo"/>
+            <column name="cost" value="4"/>
+            <column name="mana_damage" value="3"/>
+            <column name="life_damage" value="2"/>
+            <column name="description" value="Sim, parece que o Bug está te sabotando, você acaba de perder 3 pontos de mana, e 2 pontos de energia, isso custou 4 pontos de mana para o BUG"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="2"/>
+            <column name="title" value="Código Mal Escrito"/>
+            <column name="cost" value="6"/>
+            <column name="mana_damage" value="2"/>
+            <column name="life_damage" value="2"/>
+            <column name="description" value="Variáveis mal nomeadas, código confuso, não consigo achar nada aqui dentro, o bug parece que vai se esconder melhor que nunca, isso vai te custar muito esforço. O bug te tira 2 pontos de vida  e 2 pontos de mana. Isso custou 6 pontos de mana para o Bug"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="3"/>
+            <column name="title" value="Perdeu a Daily"/>
+            <column name="cost" value="3"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="5"/>
+            <column name="description" value="Sim, algo estranho aconteceu, só pode ser sobrenatural. Você perdeu a Daily, não sabe para onde seu time está levando o sistema, não conseguiu aproveitar para mostrar alguns dos impedimentos…. Perca 5 pontos de vida, isso irá custar para o bug 3 pontos de mana"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="4"/>
+            <column name="title" value="EndPoint Batendo errado"/>
+            <column name="cost" value="4"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="4"/>
+            <column name="description" value="Puxa, que distração. Você está recebendo um erro 500, NullPointerException, tanto tempo perdido, e só agora entendeu que esse não era o seu erro, era apenas o endpoint que estava batendo errado, perdeu tempo e tempo é vida. Perca 4 pontos de vida, e isso irá custar 4 pontos de mana para o Bug"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="5"/>
+            <column name="title" value="Perdendo Contato"/>
+            <column name="cost" value="6"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="4"/>
+            <column name="description" value="Você ficou dedicado algum tempo ao bug, não conversou com o time, não entrou no Change Experience Jr, e nem pediu ajuda para a equipe.  Acho que essa timidez irá lhe custar caro. Perca 4 pontos de vida e o bug irá perder 6 pontos de mana"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="6"/>
+            <column name="title" value="Má administração do Tempo"/>
+            <column name="cost" value="1"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="3"/>
+            <column name="description" value="Sim, parece que acumularam algumas atividades extras, você sabe que deveria ter feito, e agora as atividades que estavam previstas certamente irão atrasar. Perca 3 pontos de vida para o bug, irá custar 1 ponto de mana"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="7"/>
+            <column name="title" value="Git"/>
+            <column name="cost" value="1"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="2"/>
+            <column name="description" value="Parece que você não deu Git Pull recentemente não é mesmo ? Vejo muito conflito entre os códigos da master e da sua Branch… isso vai te custar algum tempo também, você perdeu 2 pontos de vida,  e isso custou ao bug apenas 1 ponto de mana"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="8"/>
+            <column name="title" value="Pandemia"/>
+            <column name="cost" value="8"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="6"/>
+            <column name="description" value="Você se arriscou, não respeitou a pandemia, tentou sair para trabalhar e adoeceu, virus e bug ? um belo estrago, você perdeu 6 pontos de vida e isso custou 8 pontos de mana para o Bug"/>
+        </insert>
+
+        <insert tableName="machine_card" schemaName="jarvis_magic">
+            <column name="id" value="9"/>
+            <column name="title" value="Sem teste"/>
+            <column name="cost" value="6"/>
+            <column name="mana_damage" value="0"/>
+            <column name="life_damage" value="5"/>
+            <column name="description" value="Hm…. achou que tinha me vencido e não me venceu não é mesmo ? Acho que alguem irá perder alguns belos pontos de vida 5 para ser mais exato…. Para te pregar esta peça o Bug irá gastar 6 pontos de mana"/>
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>
