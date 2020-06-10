@@ -27,12 +27,20 @@ class PlayerService(
     }
 
     override fun update(playerTO: PlayerTO, id: String): PlayerTO {
-        val player = playerRepository.findById(id).orElseThrow{ PlayerNotFoundException() }
+        val player = playerRepository.findById(id).orElseThrow { PlayerNotFoundException() }
 
         val playerUpdated = playerRepository.save(player.copy(nickname = playerTO.nickname))
 
         log.info("Player updated: $playerUpdated")
 
         return playerUpdated.toTO()
+    }
+
+    override fun getById(id: String): PlayerTO {
+        val player = playerRepository.findById(id).orElseThrow {PlayerNotFoundException() }
+
+        log.info("Player found: $player")
+
+        return player.toTO()
     }
 }

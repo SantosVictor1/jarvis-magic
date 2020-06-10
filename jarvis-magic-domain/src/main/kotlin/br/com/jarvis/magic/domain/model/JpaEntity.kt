@@ -3,6 +3,7 @@ package br.com.jarvis.magic.domain.model
 import org.hibernate.annotations.GenericGenerator
 import java.util.UUID
 import javax.persistence.Entity
+import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
@@ -22,13 +23,13 @@ data class PlayerEntity (
     val nickname: String = "",
     val life: Int = 20,
     val mana: Int = 20,
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "player_deck",
         joinColumns = [JoinColumn(name = "player_id")],
         inverseJoinColumns = [JoinColumn(name = "card_id")]
     )
-    private val player: List<PlayerCardEntity> = listOf()
+    private val cards: List<PlayerCardEntity> = listOf()
 )
 
 @Entity

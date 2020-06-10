@@ -7,4 +7,6 @@ interface IPlayerService {
     fun create(playerTO: PlayerTO): PlayerTO
 
     fun update(playerTO: PlayerTO, id: String): PlayerTO
+
+    fun getById(id: String): PlayerTO
 }
