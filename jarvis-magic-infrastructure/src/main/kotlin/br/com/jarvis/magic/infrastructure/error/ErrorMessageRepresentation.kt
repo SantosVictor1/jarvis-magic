@@ -8,5 +8,7 @@ data class ErrorMessageRepresentation (
     val code: String,
     val message: String,
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
-    val fields: Map<String, List<String>>? = null
+    val fields: Map<String, List<String>>? = null,
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    val originalError: String? = null
 )
